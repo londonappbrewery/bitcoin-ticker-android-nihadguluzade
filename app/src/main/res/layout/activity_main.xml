@@ -11,25 +11,112 @@
     android:background="@color/bkgndColour"
     tools:context="com.londonappbrewery.bitcointicker.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_default_text"
-        android:id="@+id/priceLabel"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        android:textColor="@color/fontColour"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/label_default_text"-->
+        <!--android:id="@+id/priceLabel"-->
+        <!--android:textSize="45sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="@color/fontColour"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true"/>-->
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
         android:id="@+id/logoImage"
         android:contentDescription="@string/imageview_desc"
         android:src="@drawable/bitcoin_image"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/lastPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/priceLabel"
+        android:layout_alignBottom="@+id/priceLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/last_price"
+        android:textAlignment="viewStart"
+        android:gravity="start"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/priceLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logoImage"
+        android:layout_marginTop="40dp"
+        android:gravity="end"
+        android:text="@string/label_default_text"
+        android:textAlignment="textEnd"
+        android:textColor="@color/fontColour"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/HighPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/priceLabelHigh"
+        android:layout_alignBottom="@+id/priceLabelHigh"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/high_price"
+        android:textAlignment="viewStart"
+        android:gravity="start"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/priceLabelHigh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logoImage"
+        android:layout_marginTop="80dp"
+        android:gravity="end"
+        android:text="@string/label_default_text"
+        android:textAlignment="textEnd"
+        android:textColor="@color/fontColour"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/LowPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/priceLabelLow"
+        android:layout_alignBottom="@+id/priceLabelLow"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/low_price"
+        android:textAlignment="viewStart"
+        android:gravity="start"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/priceLabelLow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logoImage"
+        android:layout_marginTop="120dp"
+        android:gravity="end"
+        android:text="@string/label_default_text"
+        android:textAlignment="textEnd"
+        android:textColor="@color/fontColour"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -39,22 +126,23 @@
         android:gravity="center_vertical|center_horizontal">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/base"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:id="@+id/textView"
-            android:layout_gravity="center_vertical"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="10dp"
+            android:text="@string/base"
+            android:textAllCaps="false"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/currency_spinner"
-            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
             android:spinnerMode="dropdown"
             android:dropDownSelector="@color/fontColour"
             />
